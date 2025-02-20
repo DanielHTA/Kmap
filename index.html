@@ -1,34 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Karnaugh Map Builder and Solver</title>
-	<link rel="stylesheet" href="assets/css/style.css"> 	    
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karnaugh Map Builder and Solver</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-	<div class="main">
+    <div class="container my-5">
+        <div id="EquationDiv" class="mb-4"></div>
 
-		<div class="fluid container add-bottom">
-				<div id="EquationDiv">
-				</div>        
-		    <div class="eight columns add-bottom">    
-				<p class="pull-center"><b>Truth Table</b></p>
-		    	<div id="TruthTableDiv">
-				</div>     
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h4 class="text-center"><strong>Truth Table</strong></h4>
+                <div id="TruthTableDiv" class="d-flex justify-content-center">
+                </div>
+            </div>
 
-			</div>
+            <div class="col-md-6 mb-4">
+                <h4 class="text-center"><strong>Karnaugh Map</strong></h4>
+                <div id="KarnoMapDiv" class="d-flex justify-content-center">
+                </div>
+            </div>
+        </div>
+    </div>
 
-	    	<div class="eight columns">    
-				<p class="pull-center"><b>Karnaugh Map</b></p>
-		    	<div id="KarnoMapDiv">
-				</div>
-			</div>
-		</div>
-	</div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-
-	<script src="app.js"></script> 	    
+    <script src="app.js"></script>
 </body>
 </html>
