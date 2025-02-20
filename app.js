@@ -1,49 +1,28 @@
-// Copyright (C) 2014 JoÃ£o Rafael.  
-// 	  JoÃ£o Rafael Email:    joaoraf[ at ]me.com
-//
-// 	  This is a adapted file from KARNAUGH MAP EXPLORER 2.0, created by Mike Sandige and Richard Sandige 
-// 	  COPYRIGHT(C) 2011 | GNU General Public License
-// 	  URL: http://www.ee.calpoly.edu/media/uploads/resources/KarnaughExplorer_1.html
-// 	  Mike Sandige Email:    mike_s_101[ at ]hotmail.com
-// 	  Richard Sandige Email: rsandige[ at ]calpoly.edu
-//
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License version 2
-// as published by the Free Software Foundation; 
 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-
-// for a good javascript reference, see http://wp.netscape.com/eng/mozilla/3.0/handbook/javascript/
-
-// Constants
 var MaxVariableCount=4;							
 var VariableNames = new Array("A","B","C","D");	
-var Width  = new Array(0,2,2,4,4);				// width of Kmap for each VariableCount
-var Height = new Array(0,2,2,2,4);				// height of Kmap for each VariableCount
-var BitOrder = new Array(0,1,3,2);				// bits across and down Kmap
+var Width  = new Array(0,2,2,4,4);
+var Height = new Array(0,2,2,2,4);
+var BitOrder = new Array(0,1,3,2);
 var BackgroundColor="white";
-var AllowDontCare=false;						// true doesn't guarantee a minimal solution
+var AllowDontCare=false;
 var DontCare = "X";
 
-// Variables (initialized here)
-var VariableCount=2;							//1..4
-var TruthTable = new Array();					// truth table structure[row][variable]
-var KMap = new Array();							// KMap[across][down]
-var Equation = new Array();						// solution results 
-var FunctionText = "";							// F(ABC)= 
+var VariableCount=2;
+var TruthTable = new Array();
+var KMap = new Array();
+var Equation = new Array();
+var FunctionText = "";
 var EquationHighlightColor = "rgb(243,194,86)";
 var Heavy = 20;
 
 for (i=0; i<Math.pow(2,MaxVariableCount); i++)
 {
-	Equation[i] = new Array();					// for each term in result function
-	Equation[i].ButtonUIName = "EQ" + i;		// used to generate HTML IDs
-	Equation[i].Expression = "";				// HTML text for term 
-	Equation[i].Rect = null;					// 'rect' for term 
-	Equation.UsedLength=0;						// # of terms in current result function
+	Equation[i] = new Array();
+	Equation[i].ButtonUIName = "EQ" + i;
+	Equation[i].Expression = "";
+	Equation[i].Rect = null;
+	Equation.UsedLength=0;
 }
 
 Equation.UsedLength=1;
