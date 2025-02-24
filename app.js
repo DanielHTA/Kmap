@@ -85,8 +85,8 @@ function InitializeTables(VarCount)
 
 function HighlightColor( Value )
 {
-    if (Value=="1") return "#c85a3c";
-    if (Value=="0") return "#00c396";
+    if (Value=="1") return "#005F6A";
+    if (Value=="0") return "#000000";
     return "gray";
 }
 
@@ -558,6 +558,7 @@ function SetInnerHTML(Name,Text)
 function SetBackgroundColor(Name,Color)
 {
     GetElement(Name).style.backgroundColor = Color;
+    GetElement(Name).style.color = 'white';
 }
 
 function SetValue(Name,Value)
@@ -569,7 +570,7 @@ function GenerateTruthTableHTML()
 {
     var Text = "<table ID=\"TruthTableID\" style=\"text-align:center\">";
     {
-        Text = Text + "<thead style=\"background: gainsboro;text-align:center\"><tr>";
+        Text = Text + "<thead style=\"background: #adadad;text-align:center;color:black;\"><tr>";
         var i=0;
         for (i=0; i<VariableCount; i++)
         {
@@ -591,7 +592,7 @@ function GenerateTruthTableHTML()
             for (j=0; j<VariableCount; j++)
             {
                 if (DisplayValue(TruthTable[i][j].Variable) == 1) {
-                    var color = "style=\"background-color: rgba(255,255,255,.3);font-weight: bold\""
+                    var color = "style=\"font-weight: bold\""
                 }else{
                     var color = "";
                 }
@@ -611,7 +612,7 @@ function GenerateKarnoMapHTML()
 {
     var Text = "<table><thead><tr>";
     var h,w;
-    Text = Text + "<th colspan=\"2\" ></th><th style=\"background: gainsboro;border-bottom:2px solid rgb(31, 39, 55)\" colspan="+(KMap.Width)+">";
+    Text = Text + "<th colspan=\"2\" ></th><th style=\"background: #adadad;border-bottom:2px solid rgb(31, 39, 55);color:black;\" colspan="+(KMap.Width)+">";
 
     for (i=0; i<KMap.XVariables; i++)
     {
@@ -624,7 +625,7 @@ function GenerateKarnoMapHTML()
 
     for (i=0; i<KMap.Width; i++)
     {
-        Text += "<th class=\"header-color\" style=\"background: gainsboro\">"+BinaryString(BitOrder[i],KMap.XVariables)+"</th>";
+        Text += "<th class=\"header-color\" style=\"background: #adadad;color:black;\">"+BinaryString(BitOrder[i],KMap.XVariables)+"</th>";
     }
     Text+="</tr>";
     
@@ -638,13 +639,13 @@ function GenerateKarnoMapHTML()
         }
         if (h==0)
         {
-            Text += "<th style=\"background: gainsboro; width: 15%\" rowspan="+((KMap.Height) + 2)  +">";
+            Text += "<th style=\"background: #adadad;color:black; width: 15%\" rowspan="+((KMap.Height) + 2)  +">";
             for (i=0; i<KMap.YVariables; i++)
             {
                 Text += "<b class=\"header-color\">" + VariableNames[i+KMap.XVariables] + "</b>";
             }
         }
-        Text += "<th class=\"header-color\" style=\"border-left: 2px solid black;background: gainsboro;width: 15%\" >"+BinaryString(BitOrder[h],KMap.YVariables)+"</th>";
+        Text += "<th class=\"header-color\" style=\"border-left: 2px solid black;background: #adadad;color:black;width: 15%\" >"+BinaryString(BitOrder[h],KMap.YVariables)+"</th>";
 
         for (w=0; w<KMap.Width; w++)
         {
