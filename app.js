@@ -660,7 +660,6 @@ function GenerateKarnoMapHTML()
     return Text;
 }
 
-
 function GenerateEquationHTML()
 {
     var j;
